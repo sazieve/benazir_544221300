@@ -17,7 +17,7 @@ class ProdukController extends Controller
      */
     public function index(): View
     {
-        $produks = Produk::latest()->paginate(5);
+        $produks = Produk::latest()->paginate(20);
 
         return view('produks.index',compact('produks'))
                     ->with('i', (request()->input('page', 1) - 1) * 5);
